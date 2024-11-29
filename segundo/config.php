@@ -1,6 +1,6 @@
 <?php
-define('DB_HOST', 'localhost');
+define('DB_HOST', 'mysql.railway.internal');
 define('DB_USER', 'root');
-define('DB_PASS', '');
-define('DB_NAME', 'link_sharing_site');
+define('DB_PASS', 'yjZDmqlEUbJphvJAXivwhPhLCWgsnMHC');
+define('DB_NAME', 'railway');
 ?>
