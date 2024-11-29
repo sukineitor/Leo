@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login in Nardelink</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="shortcut icon" href="segundo/img/1.png" type="image/png">
+</head>
+<body>
+    <div class="container">
+        <h2>Nardelink</h2>
+
+        <!-- Display error message if exists -->
+        <?php if(isset($error)) { echo "<p class='error'>$error</p>"; } ?>
+
+        <!-- Login form -->
+        <form method="post" action="">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="submit" value="Login">
+        </form>
+
+        <!-- Link to the registration page -->
+        <p>Don't have an account? <a href="registro.php">Register here</a></p>
+    </div>
+</body>
+</html>
