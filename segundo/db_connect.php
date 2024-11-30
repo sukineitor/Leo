@@ -1,10 +1,18 @@
 <?php
 require_once 'config.php';
 
-$conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-
-if ($conn->connect_error) {
-    error_log("Connection failed: " . $conn->connect_error);  // Esto te ayuda a ver el error en el log de errores.
-    die("Error connecting to the database. Please try again later.");
+try {
+    // Usar PDO para conectar a PostgreSQL
+    $dsn = "pgsql:host=" . DB_HOST . ";port=" . DB_PORT . ";dbname=" . DB_NAME;
+    $conn = new PDO($dsn, DB_USER, DB_PASS);
+    
+    // Configuración para reportar errores
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+    // Prueba exitosa
+    echo "Conexión exitosa a PostgreSQL"; // Mensaje de prueba
+} catch (PDOException $e) {
+    error_log("Connection failed: " . $e->getMessage()); // Registro de error
+    die("Error en la conexión a la base de datos.");
 }
 ?>
