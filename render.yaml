@@ -1,8 +1,10 @@
 services:
   - type: web
-    name: NardeLink
+    name: LeoApp
     env: php
-    region: oregon
-    buildCommand: ''
-    startCommand: php -S 0.0.0.0:8080
     plan: free
+    buildCommand: ""  # PHP no requiere un comando de compilación
+    startCommand: php -S 0.0.0.0:8080 -t public
+    envVars:
+      - key: ENVIRONMENT
+        value: production
