@@ -3,8 +3,8 @@ services:
     name: MiProyectoPHP
     env: php
     plan: free
-    buildCommand: "composer install"  # Si usas Composer para administrar dependencias
-    startCommand: "php -S 0.0.0.0:8080 -t ."  # Comando para arrancar tu servidor PHP
+    buildCommand: "composer install"
+    startCommand: "php -S 0.0.0.0:8080 -t ."
     envVars:
       - key: ENVIRONMENT
         value: production
