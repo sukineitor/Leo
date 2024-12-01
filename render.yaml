@@ -3,7 +3,7 @@ services:
     name: LeoApp
     env: php
     plan: free
-    buildCommand: ""  # PHP no requiere un comando de compilación
+    buildCommand: ""  # No se necesita un comando de compilación para PHP
     startCommand: php -S 0.0.0.0:8080 -t public
     envVars:
       - key: ENVIRONMENT

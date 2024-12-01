@@ -1,0 +1,8 @@
+{
+    "name": "Nardelink",
+    "description": "Un proyecto PHP en Render",
+    "require": {
+      "php": ">=7.4"
+    }
+  }
+  
