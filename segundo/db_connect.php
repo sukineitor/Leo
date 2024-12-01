@@ -1,11 +1,12 @@
 <?php
 require_once 'config.php';
 
-// Establecer la conexión con PostgreSQL
-$conn = pg_connect("host=" . DB_HOST . " dbname=" . DB_NAME . " user=" . DB_USER . " password=" . DB_PASS);
+// Conexión a la base de datos MySQL usando MySQLi
+$conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
-if (!$conn) {
-    error_log("Connection failed: " . pg_last_error());  // Esto te ayudará a ver el error en el log de errores.
+// Verificar la conexión
+if ($conn->connect_error) {
+    error_log("Connection failed: " . $conn->connect_error);  // Registra el error
     die("Error connecting to the database. Please try again later.");
 }
 ?>
